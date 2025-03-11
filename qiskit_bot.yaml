@@ -1,0 +1,28 @@
+---
+# We use quotes around users who don`t want a GitHub notification,
+# but whom we still want their name in the Qiskit Bot message so
+# people know they are relevant.
+notifications:
+    ".*":
+        - "`@Qiskit/terra-core`"
+    "visualization/timeline":
+        - "`@nkanazawa1989`"
+    "qpy":
+        - "`@mtreinish`"
+        - "`@nkanazawa1989`"
+    "two_qubit_decompose":
+        - "`@levbishop`"
+    "circuit/library":
+        - "`@Cryoris`"
+        - "`@ajavadia`"
+    "primitives":
+        - "`@t-imamichi`"
+        - "`@ajavadia`"
+        - "`@levbishop`"
+    "visualization":
+        - "@enavarro51"
+    "^docs/":
+        - "@Eric-Arellano"
+        - "@abbycross"
+        - "@beckykd"
+always_notify: true
