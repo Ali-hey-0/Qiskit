@@ -477,6 +477,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "faer"
+version = "0.21.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d671941ab57443f46ebe3f153a9fc3ed6cce777926c14e5fdf5da178a35ea476"
+dependencies = [
+ "bytemuck",
+ "dyn-stack 0.13.0",
+ "equator 0.4.2",
+ "faer-macros",
+ "faer-traits",
+ "gemm",
+ "generativity",
+ "libm",
+ "nano-gemm",
+ "num-complex",
+ "num-traits",
+ "pulp 0.21.4",
+ "reborrow",
+]
+
+[[package]]
 name = "faer-entity"
 version = "0.19.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -493,13 +514,41 @@ dependencies = [
 
 [[package]]
 name = "faer-ext"
-version = "0.3.0"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fa0b66079aff3caae4e41177b37487914cbcb377651e86a838d6a2088fb4b666"
+checksum = "9756e068191bf4f6b6a36dd131687f1f802cd2e3fce8b1ec4dbd5a5f5dfbafe1"
 dependencies = [
- "faer",
+ "faer 0.21.7",
  "ndarray",
  "num-complex",
+]
+
+[[package]]
+name = "faer-macros"
+version = "0.21.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9d0a255d1442b5825c61812a7eafda9034ec53d969c98555251085e148428e6a"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.99",
+]
+
+[[package]]
+name = "faer-traits"
+version = "0.21.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a2d0172aefb5f869561e558d5390657f1aa98ca3c51a09be69a4687064ebfb9a"
+dependencies = [
+ "bytemuck",
+ "dyn-stack 0.13.0",
+ "faer-macros",
+ "generativity",
+ "libm",
+ "num-complex",
+ "num-traits",
+ "pulp 0.21.4",
+ "reborrow",
 ]
 
 [[package]]
@@ -644,6 +693,12 @@ dependencies = [
  "raw-cpuid",
  "seq-macro",
 ]
+
+[[package]]
+name = "generativity"
+version = "1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5881e4c3c2433fe4905bb19cfd2b5d49d4248274862b68c27c33d9ba4e13f9ec"
 
 [[package]]
 name = "generic-array"
@@ -1414,7 +1469,7 @@ dependencies = [
  "ahash 0.8.11",
  "approx",
  "bytemuck",
- "faer",
+ "faer 0.19.4",
  "faer-ext",
  "hashbrown 0.15.2",
  "indexmap",
