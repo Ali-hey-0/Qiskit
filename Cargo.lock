@@ -462,18 +462,36 @@ dependencies = [
  "faer-entity",
  "gemm",
  "libm",
- "matrixcompare",
- "matrixcompare-core",
+ "nano-gemm",
+ "num-complex",
+ "num-traits",
+ "paste",
+ "reborrow",
+]
+
+[[package]]
+name = "faer"
+version = "0.21.9"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ebe9ac2a073e05ca749eeea503fae16a91440b20d2e92b6fc6f6c6919b9964eb"
+dependencies = [
+ "bytemuck",
+ "dyn-stack 0.13.0",
+ "equator 0.4.2",
+ "faer-macros",
+ "faer-traits",
+ "gemm",
+ "generativity",
+ "libm",
  "nano-gemm",
  "npyz",
  "num-complex",
  "num-traits",
- "paste",
+ "pulp 0.21.4",
  "rand 0.8.5",
  "rand_distr 0.4.3",
  "rayon",
  "reborrow",
- "serde",
 ]
 
 [[package]]
@@ -497,9 +515,37 @@ version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fa0b66079aff3caae4e41177b37487914cbcb377651e86a838d6a2088fb4b666"
 dependencies = [
- "faer",
+ "faer 0.19.4",
  "ndarray",
  "num-complex",
+]
+
+[[package]]
+name = "faer-macros"
+version = "0.21.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9d0a255d1442b5825c61812a7eafda9034ec53d969c98555251085e148428e6a"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.99",
+]
+
+[[package]]
+name = "faer-traits"
+version = "0.21.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1430e111b20872c7eaa82c7ada071bff1c3e3ac09cc6f4df676065fd2d41eb62"
+dependencies = [
+ "bytemuck",
+ "dyn-stack 0.13.0",
+ "faer-macros",
+ "generativity",
+ "libm",
+ "num-complex",
+ "num-traits",
+ "pulp 0.21.4",
+ "reborrow",
 ]
 
 [[package]]
@@ -644,6 +690,12 @@ dependencies = [
  "raw-cpuid",
  "seq-macro",
 ]
+
+[[package]]
+name = "generativity"
+version = "1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5881e4c3c2433fe4905bb19cfd2b5d49d4248274862b68c27c33d9ba4e13f9ec"
 
 [[package]]
 name = "generic-array"
@@ -831,22 +883,6 @@ name = "log"
 version = "0.4.26"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "30bde2b3dc3671ae49d8e2e9f044c7c005836e7a023ee57cffa25ab82764bb9e"
-
-[[package]]
-name = "matrixcompare"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "37832ba820e47c93d66b4360198dccb004b43c74abc3ac1ce1fed54e65a80445"
-dependencies = [
- "matrixcompare-core",
- "num-traits",
-]
-
-[[package]]
-name = "matrixcompare-core"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b0bdabb30db18805d5290b3da7ceaccbddba795620b86c02145d688e04900a73"
 
 [[package]]
 name = "matrixmultiply"
@@ -1414,7 +1450,7 @@ dependencies = [
  "ahash 0.8.11",
  "approx",
  "bytemuck",
- "faer",
+ "faer 0.21.9",
  "faer-ext",
  "hashbrown 0.15.2",
  "indexmap",
