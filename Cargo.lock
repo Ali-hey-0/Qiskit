@@ -477,6 +477,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "faer"
+version = "0.22.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "de26fb8fa586e2de8fa8fbe8be05012e9f986210e220e922ec74e33a01a8a921"
+dependencies = [
+ "bytemuck",
+ "dyn-stack 0.13.0",
+ "equator 0.4.2",
+ "faer-macros",
+ "faer-traits",
+ "gemm",
+ "generativity",
+ "libm",
+ "nano-gemm",
+ "num-complex",
+ "num-traits",
+ "pulp 0.21.4",
+ "reborrow",
+]
+
+[[package]]
 name = "faer-entity"
 version = "0.19.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -493,13 +514,42 @@ dependencies = [
 
 [[package]]
 name = "faer-ext"
-version = "0.3.0"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fa0b66079aff3caae4e41177b37487914cbcb377651e86a838d6a2088fb4b666"
+checksum = "d06294a67ba2c7573369db56fcc3dc97e1ee27f6658eaf35f398b845081cc012"
 dependencies = [
- "faer",
+ "faer 0.22.2",
  "ndarray",
  "num-complex",
+]
+
+[[package]]
+name = "faer-macros"
+version = "0.21.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9d0a255d1442b5825c61812a7eafda9034ec53d969c98555251085e148428e6a"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.99",
+]
+
+[[package]]
+name = "faer-traits"
+version = "0.22.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c1f92ec45f0c0920f6ddac861410894398d0983aacd09902358f44ec0ec2c26f"
+dependencies = [
+ "bytemuck",
+ "dyn-stack 0.13.0",
+ "faer-macros",
+ "generativity",
+ "libm",
+ "num-complex",
+ "num-traits",
+ "pulp 0.21.4",
+ "qd",
+ "reborrow",
 ]
 
 [[package]]
@@ -644,6 +694,12 @@ dependencies = [
  "raw-cpuid",
  "seq-macro",
 ]
+
+[[package]]
+name = "generativity"
+version = "1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5881e4c3c2433fe4905bb19cfd2b5d49d4248274862b68c27c33d9ba4e13f9ec"
 
 [[package]]
 name = "generic-array"
@@ -1408,13 +1464,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "qd"
+version = "0.7.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b4f5e6e5312f7415999bb62c0891fb286a06b6dfaef820c1ab45ff448a9b8fef"
+dependencies = [
+ "bytemuck",
+ "libm",
+ "num-traits",
+ "pulp 0.21.4",
+]
+
+[[package]]
 name = "qiskit-accelerate"
 version = "2.1.0"
 dependencies = [
  "ahash 0.8.11",
  "approx",
  "bytemuck",
- "faer",
+ "faer 0.19.4",
  "faer-ext",
  "hashbrown 0.15.2",
  "indexmap",
